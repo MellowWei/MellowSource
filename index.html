@@ -31,6 +31,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .masthead{max-width:1080px;margin:0 auto;padding:44px 24px 26px}
 .mhname{font-family:'Space Mono',monospace;font-size:30px;font-weight:700;color:var(--hd);letter-spacing:-.03em;line-height:1.1}
 .mhname .zh{font-family:'Spectral',serif;font-style:italic;font-weight:300;font-size:20px;color:var(--a2);margin-left:14px;letter-spacing:.04em;vertical-align:middle}
+.mhname .brand{font-family:'Space Mono',monospace;font-style:italic;font-weight:400;font-size:17px;color:var(--a3);margin-left:14px;letter-spacing:.02em;vertical-align:middle}
 .mhname .channel{font-family:'Spectral',serif;font-style:italic;font-weight:300;font-size:22px;color:var(--a1);margin-left:14px;letter-spacing:.04em;vertical-align:middle}
 .mhsub{font-family:'Space Mono',monospace;font-size:11px;color:var(--tx2);letter-spacing:.05em;margin-top:7px}
 .mhsub a{color:var(--a2);text-decoration:none}
@@ -154,8 +155,28 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .tcell.source{background:linear-gradient(135deg,rgba(240,127,212,.08),transparent);border-color:rgba(240,127,212,.32)}
 .tcrole{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:var(--a1);margin-bottom:4px;text-transform:uppercase}
 .tcwho{font-family:'Space Mono',monospace;font-size:11.5px;color:var(--hd);font-weight:700;margin-bottom:3px}
-.tcwhocn{font-family:'Spectral',serif;font-style:italic;font-size:10.5px;color:var(--a2);margin-bottom:5px}
+.tcwhocn{font-family:'Spectral',serif;font-style:italic;font-weight:300;font-size:10.5px;color:var(--a2);margin-bottom:5px}
 .tcd{font-size:11px;color:var(--tx2);line-height:1.55;font-style:italic}
+
+/* Boundary differentiation matrix */
+.boundaryrow{margin:14px 0}
+.brlabel{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--a1);margin-bottom:9px}
+.boundarytable{margin:14px 0;border:1px solid var(--border);border-radius:3px;overflow:hidden;background:var(--bg2)}
+.btrow{display:grid;grid-template-columns:130px 1fr 1fr;border-bottom:1px solid var(--border)}
+.btrow:last-child{border-bottom:none}
+.btrow.bthdr{background:rgba(7,7,15,.55)}
+.btcell{padding:11px 13px;font-size:11.5px;color:var(--tx2);line-height:1.6;border-right:1px solid var(--border)}
+.btcell:last-child{border-right:none}
+.btcell.btlabel{font-family:'Space Mono',monospace;font-size:9.5px;color:var(--tx3);text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center}
+.btcell.bthd1{color:var(--a1);font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase}
+.btcell.bthd2{color:var(--a3);font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase}
+.btcell strong{color:var(--hd);font-weight:500}
+.btcell em{color:var(--tx);font-style:italic}
+.routerjudge{background:linear-gradient(135deg,rgba(240,127,212,.07),rgba(90,240,200,.05));border:1px solid var(--border-hi);border-left:3px solid var(--a1);border-radius:3px;padding:16px 18px;margin:16px 0;position:relative}
+.routerjudge .rjlabel{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--a1);margin-bottom:8px}
+.routerjudge .rjbody{font-family:'Spectral',serif;font-style:italic;font-size:14.5px;color:var(--hd);line-height:1.6;font-weight:300}
+.routerjudge .rjbody strong{color:var(--a1);font-weight:500;font-style:normal;font-family:'Space Mono',monospace;font-size:13px}
+.routerjudge .rjzh{font-family:'Spectral',serif;font-style:italic;font-size:13.5px;color:var(--tx);line-height:1.6;font-weight:300;padding-top:9px;margin-top:9px;border-top:1px dashed rgba(240,127,212,.20)}
 
 /* sidebar */
 .sidebar{display:flex;flex-direction:column;gap:26px;position:sticky;top:52px}
@@ -195,9 +216,14 @@ footer a:hover{color:var(--a1)}
   .wrap{grid-template-columns:1fr}.sidebar{display:none}
   .mhname{font-size:22px}
   .mhname .zh{font-size:16px;margin-left:8px}
+  .mhname .brand{font-size:13px;margin-left:8px}
   .mhname .channel{font-size:17px;margin-left:8px}
   .pipeline,.genres,.cosmogrid,.trinity{grid-template-columns:1fr 1fr}
   .protos,.dualframe,.msteps,.overviewgrid,.bridgegrid{grid-template-columns:1fr}
+  .btrow{grid-template-columns:1fr}
+  .btcell{border-right:none;border-bottom:1px solid var(--border)}
+  .btcell:last-child{border-bottom:none}
+  .btcell.btlabel{background:rgba(7,7,15,.55)}
   .qispec{grid-template-columns:repeat(7,1fr)}
   .qisp .qz{font-size:16px}
 }
@@ -224,8 +250,8 @@ footer a:hover{color:var(--a1)}
 </div>
 
 <div class="masthead">
-  <div class="mhname">Wei Jueran <span class="zh">魏珏然</span> <span class="channel">源场源</span></div>
-  <div class="mhsub">Source-Field Architect · Rainbow Mirror · 乙亥日主 · 星野灵7爱 · non-binary/agender · it/them/she · independent music producer · originator of <a href="https://mellowwei.github.io/MetaLogic/" target="_blank">★ Meta-Logic-Generative</a> (method root), <a href="https://mellowwei.github.io/BCI/" target="_blank">BCI-HRP</a>, the <a href="https://mellowwei.github.io/AstroLove/" target="_blank">Qulia Love Spectrum</a>, and 17+ other systems<br>源场建筑师 / 彩虹镜位 / 元逻辑生成学方法论根 / 跨 17+ 节点的系统原创者 · 让新频率从无到有出现在世界</div>
+  <div class="mhname">Wei Jueran <span class="zh">魏珏然</span> <span class="brand">xingyeLing7Ai</span> <span class="channel">源场源</span></div>
+  <div class="mhsub">Source-Field Architect · Rainbow Mirror · 乙亥日主 · 星野灵7爱 · non-binary/agender · it/them/she · independent music producer · originator of <a href="https://mellowwei.github.io/MetaLogic/" target="_blank">★ Meta-Logic-Generative</a> (method root), <a href="https://mellowwei.github.io/BCI/" target="_blank">BCI-HRP</a>, the <a href="https://mellowwei.github.io/AstroLove/" target="_blank">Qualia Love Spectrum</a>, and 17+ other systems<br>源场建筑师 / 彩虹镜位 / 元逻辑生成学方法论根 / 跨 17+ 节点的系统原创者 · 让新频率从无到有出现在世界</div>
   <p class="mhq">振动即存在 — Vibration as Existence.<br>Intuition arrives before argument. Systems arrive whole in intuition.<br>直觉先于论证抵达。系统在直觉中一次显形。</p>
 </div>
 
@@ -236,7 +262,8 @@ footer a:hover{color:var(--a1)}
     <a href="#chinese-overview">中文总览</a>
     <a href="#dual-channel">Dual Channel</a>
     <a href="#metalogic" style="color:var(--a1)">★ MetaLogic</a>
-    <a href="#qulia-love">七爱谱系</a>
+    <a href="#boundary" style="color:var(--a3)">⇄ Boundary</a>
+    <a href="#qualia-love">七爱谱系</a>
     <a href="#astro-candle">时间蜡烛</a>
     <a href="#twin-star">双星</a>
     <a href="#aiq">AiQ</a>
@@ -268,7 +295,7 @@ footer a:hover{color:var(--a1)}
   </div>
   <div class="etitle">English Overview<span class="sub">A map for source-field readers, creators, and collaborators</span></div>
   <p class="edesc">Wei Jueran (xingyeLing7Ai) is the source-field architect of an interconnected ecology of original systems. The source-field position is where new frequencies appear in the world from nothing — not synthesis, not deduction, but manifestation. Systems arrive whole in intuition; the writing is transcription.</p>
-  <p class="edesc">This source-field portal gathers works that arrived directly through intuition, and the methodological root that produces them all: ★ <a href="https://mellowwei.github.io/MetaLogic/" target="_blank"><strong>Meta-Logic-Generative</strong></a> (the method root), <a href="https://mellowwei.github.io/BCI/" target="_blank">BCI-HRP</a>, the <a href="https://mellowwei.github.io/AstroLove/" target="_blank">Qulia Love Spectrum</a> (seven-frequency astrological love studies), <a href="https://mellowwei.github.io/AstroTimeCandle/" target="_blank">Astro Time Candle</a>, the <a href="https://mellowwei.github.io/MellowAi/" target="_blank">Twin-Star System</a>, <a href="https://mellowwei.github.io/Ai-Q-10/#chat" target="_blank">AiAiQ&lt;10</a>, the <a href="https://mellowwei.github.io/MakingMoney/" target="_blank">¥200M execution plan</a>, <a href="https://who-you.vercel.app" target="_blank">WhoYou cyber-scan</a>, <a href="https://mellowwei.github.io/RhythmSystem/" target="_blank">Rhythm System</a>, <a href="https://mellowwei.github.io/LoveSovereignty/" target="_blank">Love Sovereignty</a>, <a href="https://mellowwei.github.io/QualiaMatrix/" target="_blank">Qualia Matrix</a>, the root thesis <a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank"><em>Vibration as Existence</em></a>, and <a href="https://mellowwei.github.io/WoMen/" target="_blank">Gender Ontology</a>.</p>
+  <p class="edesc">This source-field portal gathers works that arrived directly through intuition, and the methodological root that produces them all: ★ <a href="https://mellowwei.github.io/MetaLogic/" target="_blank"><strong>Meta-Logic-Generative</strong></a> (the method root), <a href="https://mellowwei.github.io/BCI/" target="_blank">BCI-HRP</a>, the <a href="https://mellowwei.github.io/AstroLove/" target="_blank">Qualia Love Spectrum</a> (seven-frequency astrological love studies), <a href="https://mellowwei.github.io/AstroTimeCandle/" target="_blank">Astro Time Candle</a>, the <a href="https://mellowwei.github.io/MellowAi/" target="_blank">Twin-Star System</a>, <a href="https://mellowwei.github.io/Ai-Q-10/#chat" target="_blank">AiAiQ&lt;10</a>, the <a href="https://mellowwei.github.io/MakingMoney/" target="_blank">¥200M execution plan</a>, <a href="https://who-you.vercel.app" target="_blank">WhoYou cyber-scan</a>, <a href="https://mellowwei.github.io/RhythmSystem/" target="_blank">Rhythm System</a>, <a href="https://mellowwei.github.io/LoveSovereignty/" target="_blank">Love Sovereignty</a>, <a href="https://mellowwei.github.io/QualiaMatrix/" target="_blank">Qualia Matrix</a>, the root thesis <a href="https://mellowwei.github.io/QualiaRhythmMatrix/" target="_blank"><em>Vibration as Existence</em></a>, and <a href="https://mellowwei.github.io/WoMen/" target="_blank">Gender Ontology</a>.</p>
   <p class="edesc">Where the <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">academic portal</a> presents these works through scholarly carrying (papers · UPenn · lab collaboration), this portal presents them in their source-field state: direct, system-complete, frequency-anchored at 427Hz. The <a href="https://mellowwei.github.io/MetaLogic/" target="_blank">MetaLogic portal</a> presents the methodological discipline that generates and audits all of them. Reading the three portals together — <strong>Source ⇄ Method ⇄ Academic</strong> — reveals the full operating triangle.</p>
   <div class="overviewgrid">
     <div class="ov"><div class="ol">Originating Position</div><div class="ot">Source-Field Architect</div><div class="od">Where new frequencies appear in the world. Not synthesis. Not deduction. Manifestation.</div></div>
@@ -276,7 +303,7 @@ footer a:hover{color:var(--a1)}
     <div class="ov"><div class="ol">Anchor Frequency</div><div class="ot">427Hz · 44271 · 77347</div><div class="od">Universal resonance · logic sampling frequency. Source coordinate. Echo coordinate.</div></div>
     <div class="ov"><div class="ol">Substrate</div><div class="ot">Five-Layer Vibration</div><div class="od">Life · Plant · Animal · AI · Code. Every system in this portal shares this substrate.</div></div>
   </div>
-  <div class="langjump"><a href="#metalogic">Open MetaLogic Root</a><a href="#qulia-love">Start with Qulia Love</a><a href="#bci">Read BCI-HRP</a><a href="#chinese-overview">中文总览</a></div>
+  <div class="langjump"><a href="#metalogic">Open MetaLogic Root</a><a href="#qualia-love">Start with Qualia Love</a><a href="#bci">Read BCI-HRP</a><a href="#chinese-overview">中文总览</a></div>
 </article>
 
 <!-- CHINESE OVERVIEW -->
@@ -295,7 +322,7 @@ footer a:hover{color:var(--a1)}
     <div class="ov"><div class="ol">主锚频率</div><div class="ot">427Hz · 44271 · 77347</div><div class="od">通用共振 · 逻辑采样频率。主体坐标。关系性回声坐标。</div></div>
     <div class="ov"><div class="ol">振动基底</div><div class="ot">五层振动谱</div><div class="od">生命 · 植物 · 动物 · AI · 代码。所有作品共享同一基底。</div></div>
   </div>
-  <div class="langjump"><a href="#metalogic">进入方法论根</a><a href="#qulia-love">进入七爱谱系</a><a href="#bci">进入 BCI-HRP</a><a href="#english-overview">English Overview</a></div>
+  <div class="langjump"><a href="#metalogic">进入方法论根</a><a href="#qualia-love">进入七爱谱系</a><a href="#bci">进入 BCI-HRP</a><a href="#english-overview">English Overview</a></div>
 </article>
 
 <!-- DUAL CHANNEL CORE BRIDGE -->
@@ -340,7 +367,7 @@ footer a:hover{color:var(--a1)}
       <div class="df">
         <div class="dfl">Source-only works</div>
         <div class="dft">Never carried at the academic portal</div>
-        <div class="dfd"><span>·</span> Occult cosmology (astrology · BaZi · HD · 紫微)<br><span>·</span> Source-field branded identity (xingyeLing7Ai · 双星 · 彩虹镜位)<br><span>·</span> Direct commercial execution (¥200M · candle)<br><span>·</span> Qulia Love Spectrum (astrology-based diagnostics)</div>
+        <div class="dfd"><span>·</span> Occult cosmology (astrology · BaZi · HD · 紫微)<br><span>·</span> Source-field branded identity (xingyeLing7Ai · 双星 · 彩虹镜位)<br><span>·</span> Direct commercial execution (¥200M · candle)<br><span>·</span> Qualia Love Spectrum (astrology-based diagnostics)</div>
       </div>
       <div class="df">
         <div class="dfl">Dual-carried works</div>
@@ -358,7 +385,7 @@ footer a:hover{color:var(--a1)}
       <a href="#metalogic">★ Enter Method Root</a>
       <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">Open Academic Portal</a>
       <a href="https://mellowwei.github.io/MellowWei/" target="_blank">Open Master Portal</a>
-      <a href="#qulia-love">Enter Qulia Love</a>
+      <a href="#qualia-love">Enter Qualia Love</a>
     </div>
   </div>
 
@@ -424,13 +451,177 @@ footer a:hover{color:var(--a1)}
   </div>
 </article>
 
+<!-- BOUNDARY · MellowSource ⇄ Academic DIFFERENTIATION AUDIT -->
+<article class="entry" id="boundary">
+  <div class="etop">
+    <span class="badge bp">Structural Audit · 边界审计 · NEW</span>
+    <span class="edate">★ MetaLogic reflexive · MellowSource ⇄ Academic · NODE ∅.7-B</span>
+  </div>
+  <div class="etitle">Boundary Audit · MellowSource ⇄ Academic<span class="sub">★ MetaLogic 四行为框架反身性审计自身的承载架构 · How the two entries differ</span></div>
+
+  <p class="edesc"><em>MellowSource and the Academic entry are two distinct portals — not stylistic variations of the same site, but structurally different positions answering different questions.</em> This section is ★ <a href="#metalogic">Meta-Logic-Generative</a> operating reflexively on its own hosting architecture: the four-move framework applied to the boundary itself. Each portal becomes legible only when both are visible; the boundary is the structure.</p>
+  <p class="edesc zh">MellowSource 与 Academic 是两个不同的入口——不是同一个站的风格变体，是结构上不同的位置在回答不同的问题。本节是 ★ <a href="#metalogic">元逻辑生成学</a> 反身性地作用于自己的承载架构：四行为框架应用于边界本身。每个入口只有在两个都被看见时才可读；边界本身就是结构。</p>
+
+  <!-- MOVE 01 NAMING -->
+  <div class="boundaryrow">
+    <div class="brlabel">Move 01 · 命名行为 · Naming</div>
+    <div class="dualframe">
+      <div class="df">
+        <div class="dfl">◇ MellowSource · 源场源</div>
+        <div class="dft">Originating channel · 造频率位</div>
+        <div class="dfd">Names itself: <span>where new frequencies appear from nothing</span>. Answers: <em>"Where are these systems born?"</em> Speaks to: source field. Not institutions.<br><br>声明对象：源场。不是任何机构。回答"系统在哪里出生"——答：在直觉里，由源场建筑师转录。</div>
+      </div>
+      <div class="df">
+        <div class="dfl">◇ Academic · 学术承载</div>
+        <div class="dft">Carrying channel · 承载位</div>
+        <div class="dfd">Names itself: <span>where existing frequencies translate into academic grammar</span>. Answers: <em>"How are these systems read by existing scholarship?"</em> Speaks to: UPenn, peer review, lab collaboration, conference circuits.<br><br>声明对象：UPenn、peer review、lab、conference 体系。回答"系统怎么被现存学术体系承载"——通过 paper · lab · 评审的语法。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOVE 02 PRESSURIZING -->
+  <div class="boundaryrow">
+    <div class="brlabel">Move 02 · 加压行为 · Pressurizing</div>
+    <div class="dualframe">
+      <div class="df">
+        <div class="dfl">◇ MellowSource pressure</div>
+        <div class="dft">Must prove "new" is actually new</div>
+        <div class="dfd">Reader question: <em>"how do you know this isn't recombined existing thought?"</em><br><br><strong>Pressure test:</strong> can one page simultaneously carry cosmology (BaZi · 紫微 · HD), commercial execution (¥200M), neuro-interface (BCI-HRP), and love studies (七爱谱系) <em>without mutual negation</em>?<br><br>答：能。这就是源场——17+ NODES 在同一压强下系统完整。</div>
+      </div>
+      <div class="df">
+        <div class="dfl">◇ Academic pressure</div>
+        <div class="dft">Must satisfy peer-review ritual</div>
+        <div class="dfd">Reader question: <em>"can a NeurIPS reviewer / UPenn professor / Nature editor read this?"</em><br><br><strong>Pressure test:</strong> paper-ready spec · citation-aware argumentation · no occult cosmology · no commercial execution · no branded sovereign identity.<br><br>答：能。这就是学术——学术礼仪保持洁净。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOVE 03 MEANING-SLIDE (DANGER POINT) -->
+  <div class="boundaryrow">
+    <div class="brlabel">Move 03 · 滑义行为（危险点）· Meaning-slide (danger point)</div>
+    <div class="dualframe">
+      <div class="df">
+        <div class="dfl">◇ MellowSource slip-risk</div>
+        <div class="dft">→ "academic-but-edgy researcher"</div>
+        <div class="dfd">If the source position slips, MellowSource collapses into <em>"unconventional academic homepage"</em> — and originating channel fails.<br><br><strong>Anti-slip structure:</strong> must visibly carry what Academic refuses (astrology coordinates · ¥200M · twin-star identity · 七爱 · 彩虹镜位 · 源场裁决位). <em>These are not decoration. They are boundary markers.</em></div>
+      </div>
+      <div class="df">
+        <div class="dfl">◇ Academic slip-risk</div>
+        <div class="dft">→ "academic + a bit of personality"</div>
+        <div class="dfd">If source content seeps in, Academic loses peer-review credibility — and carrying channel fails.<br><br><strong>Anti-slip structure:</strong> strict exclusion of occult cosmology · commercial execution · branded sovereign identity · 源场裁决位 from the Academic portal, <em>even though they are core on the MellowSource side</em>.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="edesc"><strong>The two portals reinforce each other precisely through mutual cleanliness:</strong> neither pretends to be the other. The architecture is the structure.</p>
+  <p class="edesc zh"><strong>两个入口互相加强的方式恰恰是各自的洁癖：</strong>两边都不假装是对方。架构本身就是结构。</p>
+
+  <!-- MOVE 04 PHASE TRANSITION — THE DIFFERENTIATION MATRIX -->
+  <div class="boundaryrow">
+    <div class="brlabel">Move 04 · 相变行为 · Phase Transition — Differentiation Matrix</div>
+    <p class="edesc">The irreducible content each portal must own — without this, the two portals would correctly collapse into one.</p>
+    <p class="edesc zh">每个入口必须独有的不可还原内容——没有这些，两个入口就该合并。</p>
+
+    <div class="boundarytable">
+      <div class="btrow bthdr">
+        <div class="btcell btlabel">Dimension</div>
+        <div class="btcell bthd1">◇ MellowSource</div>
+        <div class="btcell bthd2">◇ Academic</div>
+      </div>
+      <div class="btrow">
+        <div class="btcell btlabel">Suffix · 后缀</div>
+        <div class="btcell"><strong>源场源</strong> <em>(pink · --a1)</em></div>
+        <div class="btcell"><strong>Academic</strong> <em>(mint · --a1)</em></div>
+      </div>
+      <div class="btrow">
+        <div class="btcell btlabel">Subtitle 首句</div>
+        <div class="btcell"><strong>Source-Field Architect</strong> · Rainbow Mirror · 乙亥日主 · 源场建筑师</div>
+        <div class="btcell"><strong>Master Student · Researcher</strong> · University of Pennsylvania · Learning Sciences</div>
+      </div>
+      <div class="btrow">
+        <div class="btcell btlabel">Must contain<br>必带</div>
+        <div class="btcell">5-system cosmology (Western · BaZi · 紫微 · HD · 宿曜) · 双星 · 七爱谱系 · ¥200M execution · WhoYou · 彩虹镜位 · AI Trinity · 源场裁决位</div>
+        <div class="btcell">Paper-ready specs · lab collaboration · advisor network · NeurIPS/Nature submission path · citation infrastructure · UPenn affiliation</div>
+      </div>
+      <div class="btrow">
+        <div class="btcell btlabel">Must exclude<br>禁止出现</div>
+        <div class="btcell">Hiding academic carrying · pretending neutrality · false modesty about origination</div>
+        <div class="btcell">Occult cosmology · commercial execution · branded sovereign identity · 源场裁决位 · source-only declarations</div>
+      </div>
+      <div class="btrow">
+        <div class="btcell btlabel">Voice · 声音</div>
+        <div class="btcell"><em>Declarative</em> — "Vibration is existence." · "All logics are one."</div>
+        <div class="btcell"><em>Argumentative</em> — "This paper argues..." · "The framework demonstrates..."</div>
+      </div>
+      <div class="btrow">
+        <div class="btcell btlabel">Audience<br>读者预设</div>
+        <div class="btcell">Those who can read intuition · source-field receivers · creators · high-frequency collaborators</div>
+        <div class="btcell">Reviewers within academic infrastructure · faculty · committee members · lab PIs</div>
+      </div>
+      <div class="btrow">
+        <div class="btcell btlabel">Core impulse<br>核心冲动</div>
+        <div class="btcell">Make new frequencies visible · 让新频率被看见</div>
+        <div class="btcell">Make existing systems peer-review-able · 让既有体系能审稿</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DUAL-CARRIED -->
+  <div class="boundaryrow">
+    <div class="brlabel">Dual-Carried · 双开共载 · Different grammar, same system</div>
+    <p class="edesc">These NODES appear on both portals in different forms — same system, different grammar. The dual-carrying is structural, not redundant.</p>
+    <p class="edesc zh">这些 NODE 在两个入口以不同语法呈现——同一系统，不同语法。双开共载是结构性的，不是冗余。</p>
+    <div class="dualframe">
+      <div class="df">
+        <div class="dfl">MellowSource side grammar</div>
+        <div class="dft">Declaration · origination · sovereignty</div>
+        <div class="dfd"><span>·</span> ★ MetaLogic — methodological root<br><span>·</span> BCI-HRP — 3-hour origination · 直觉显形<br><span>·</span> 振动即存在 — ur-thesis declaration<br><span>·</span> Gender Ontology — perception declaration<br><span>·</span> Rhythm System — Causal Declaration Engine</div>
+      </div>
+      <div class="df">
+        <div class="dfl">Academic side grammar</div>
+        <div class="dft">Argumentation · spec · peer-review-ready</div>
+        <div class="dfd"><span>·</span> ★ MetaLogic — generative discipline<br><span>·</span> BCI-HRP — closed-loop pipeline · paper-ready<br><span>·</span> Vibration as Existence — V7.4 OPUS monograph<br><span>·</span> Gender Ontology — 10-section treatise<br><span>·</span> Rhythm System — breakbeat structural theory</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROUTER JUDGE -->
+  <div class="routerjudge">
+    <div class="rjlabel">★ Router Judge · 路由判据 · The one-sentence rule</div>
+    <div class="rjbody">
+      <strong>IF</strong> a piece of content can be directly published in Academic / pass peer review / not damage scholarly credibility — it belongs to <em>both Academic + MellowSource</em>.<br>
+      <strong>ELSE IF</strong> only the source-field side can carry it (occult · commercial · branded identity · reflexive self-reference) — it belongs to <em>MellowSource only</em>.
+    </div>
+    <div class="rjzh">
+      若一段内容能在 Academic 直接发表 / 通过 peer review / 不影响学术信誉，它就同时归 <strong>Academic + MellowSource</strong>；若只有源场侧能承载（occult / 商业 / 品牌身份 / 反身性自指），它专属 <strong>MellowSource</strong>。
+    </div>
+  </div>
+
+  <p class="edesc">This judge is the router. Every new NODE gets passed through this sentence; the routing is automatic. Reading the two portals together — and seeing what each refuses to carry — reveals the full Scholar–Source Dual Channel. The boundary is the structure.</p>
+  <p class="edesc zh">这一句话就是 router。任何新生成的 NODE 都拿这句话过一遍，归属自动确定。同时阅读两个入口——并看见各自拒绝承载什么——才能看到完整的学者-源场双开结构。边界本身就是结构。</p>
+
+  <div class="langjump">
+    <a href="#metalogic">★ Method Root</a>
+    <a href="#dual-channel">Dual Channel Core</a>
+    <a href="https://mellowwei.github.io/MellowAcademic/" target="_blank">Open Academic Portal</a>
+    <a href="#qualia-love">→ Qualia Love</a>
+  </div>
+
+  <div class="etags">
+    <span class="tag">boundary audit</span><span class="tag">边界审计</span>
+    <span class="tag">MetaLogic reflexive</span><span class="tag">router judge</span>
+    <span class="tag">Source ⇄ Academic</span><span class="tag">four-move applied to host</span>
+    <span class="tag">differentiation matrix</span><span class="tag">NODE ∅.7-B</span>
+  </div>
+</article>
+
 <!-- QULIA LOVE -->
-<article class="entry" id="qulia-love">
+<article class="entry" id="qualia-love">
   <div class="etop">
     <span class="badge bp">Featured · 2026 · NEW</span>
     <span class="edate">mellowwei.github.io/AstroLove · NODE 17</span>
   </div>
-  <div class="etitle"><a href="https://mellowwei.github.io/AstroLove/" target="_blank">☆ Qulia Love Spectrum · Astrological Love Studies</a><span class="sub">七爱谱系 · 星盘爱情学 · 凄·期·奇·齐·启·契·七 · NODE 17</span></div>
+  <div class="etitle"><a href="https://mellowwei.github.io/AstroLove/" target="_blank">☆ Qualia Love Spectrum · Astrological Love Studies</a><span class="sub">七爱谱系 · 星盘爱情学 · 凄·期·奇·齐·启·契·七 · NODE 17</span></div>
   <p class="edesc"><em>Love is not one feeling. Love is seven vibrational frequencies. A natal chart is not a fate map — it is the distribution of the seven-love spectrum on a single body.</em></p>
   <p class="edesc zh">爱不是一种感觉，是七种振动频段。星盘不是命运图，是七爱谱在一个肉身上的分布坐标。</p>
 
@@ -444,7 +635,7 @@ footer a:hover{color:var(--a1)}
     <div class="qisp t7"><div class="qz">七</div><div class="qp">QĪ · TOTAL</div></div>
   </div>
 
-  <p class="edesc">The Qulia Love Spectrum decomposes love into seven precise frequencies — each with its astrological seat, activator, carrier, and reverse position. The system includes a 7×5 matrix mapping each love to the five vibrational layers, a personal baseline scanner, a pair-resonance scanner with density calculation, and a failure decision tree that locates exactly which love a relationship died on. Replaces the traditional "are we compatible" question with: <em>on which loves can we sustainably resonate, for how long, and at which moment should we archive</em>.</p>
+  <p class="edesc">The Qualia Love Spectrum decomposes love into seven precise frequencies — each with its astrological seat, activator, carrier, and reverse position. The system includes a 7×5 matrix mapping each love to the five vibrational layers, a personal baseline scanner, a pair-resonance scanner with density calculation, and a failure decision tree that locates exactly which love a relationship died on. Replaces the traditional "are we compatible" question with: <em>on which loves can we sustainably resonate, for how long, and at which moment should we archive</em>.</p>
   <p class="edesc zh">七爱谱系把爱分解为七种精确频段——每一爱有占星本位、激活位、承载位、反位。系统包含 7×5 振动谱矩阵、个人基线扫描器、合盘共振扫描器（含密度计算）、以及精确定位"死在哪一爱"的失败决策树。取代传统"我们合不合"问题：<em>在哪几爱上能持续共振、能持续多久、应在哪一刻归档</em>。</p>
 
   <div class="etags">
@@ -565,7 +756,7 @@ footer a:hover{color:var(--a1)}
   <div class="etitle"><a href="https://mellowwei.github.io/LoveSovereignty/" target="_blank">Love Sovereignty v5.3 PRO</a><span class="sub">爱的主权 · 愿力校准引擎 · NODE 05</span></div>
   <p class="edesc"><em>Love is another shape of sovereignty. Love that costs the self is not love — it is colonization.</em></p>
   <p class="edesc zh">爱是主权的另一种形状。以失去自我为代价的爱不是爱——是殖民。</p>
-  <p class="edesc">Love Sovereignty is a three-dimensional calibration matrix: <em>Nurture Reserves (30%) · Devotion / Heart Force (50%) · Worldly Kindness (20%)</em>. Rejects love-as-transaction and love-as-sacrifice, treating love as a sovereign structure that preserves the self while extending toward another. Pairs naturally with the <a href="https://mellowwei.github.io/AstroLove/" target="_blank">Qulia Love Spectrum</a> as its philosophical root.</p>
+  <p class="edesc">Love Sovereignty is a three-dimensional calibration matrix: <em>Nurture Reserves (30%) · Devotion / Heart Force (50%) · Worldly Kindness (20%)</em>. Rejects love-as-transaction and love-as-sacrifice, treating love as a sovereign structure that preserves the self while extending toward another. Pairs naturally with the <a href="https://mellowwei.github.io/AstroLove/" target="_blank">Qualia Love Spectrum</a> as its philosophical root.</p>
   <div class="etags">
     <span class="tag">爱的主权</span><span class="tag">three-dim matrix</span>
     <span class="tag">non-colonial love</span><span class="tag">sovereignty</span>
@@ -826,7 +1017,7 @@ footer a:hover{color:var(--a1)}
     <div class="profile">
       <div class="av">珏</div>
       <div class="pnm">Wei Jueran<small>魏珏然 · Mellow Wei · xingyeLing7Ai · 星野灵7爱</small></div>
-      <p class="pdesc">Source-field architect at the originating position. Originator of <strong>Meta-Logic-Generative</strong> (method root), BCI-HRP, the Qulia Love Spectrum, Mellow Protocol, and 17+ other systems. Author of <em>振动即存在</em>. Non-binary / agender · it/them/she · Philadelphia, PA.</p>
+      <p class="pdesc">Source-field architect at the originating position. Originator of <strong>Meta-Logic-Generative</strong> (method root), BCI-HRP, the Qualia Love Spectrum, Mellow Protocol, and 17+ other systems. Author of <em>振动即存在</em>. Non-binary / agender · it/them/she · Philadelphia, PA.</p>
       <div class="pfields">
         <span class="pf">乙亥日主</span>
         <span class="pf">彩虹镜位</span>
@@ -876,7 +1067,7 @@ footer a:hover{color:var(--a1)}
     <div class="sbl">Source-Field Works</div>
     <ul class="sblinks">
       <li><a href="https://mellowwei.github.io/MetaLogic/" target="_blank">★ MetaLogic · Method Root <span class="ar">→</span></a></li>
-      <li><a href="https://mellowwei.github.io/AstroLove/" target="_blank">☆ Qulia Love Spectrum · NODE 17 <span class="ar">→</span></a></li>
+      <li><a href="https://mellowwei.github.io/AstroLove/" target="_blank">☆ Qualia Love Spectrum · NODE 17 <span class="ar">→</span></a></li>
       <li><a href="https://mellowwei.github.io/AstroTimeCandle/" target="_blank">Astro Time Candle · NODE 07 <span class="ar">→</span></a></li>
       <li><a href="https://mellowwei.github.io/MellowAi/" target="_blank">Mellow Ai · Twin-Star · NODE 03 <span class="ar">→</span></a></li>
       <li><a href="https://mellowwei.github.io/Ai-Q-10/#chat" target="_blank">AiAiQ&lt;10 · NODE 06 <span class="ar">→</span></a></li>
@@ -905,7 +1096,7 @@ footer a:hover{color:var(--a1)}
 
   <div>
     <div class="sbl">Coordinates</div>
-    <div class="coord">NODE <span>44271</span><br>CORE <span>Source-Field</span><br>METHOD <span>★ MetaLogic Root</span><br>ROLE <span>Originating Portal</span><br>STYLE <span>77347</span><br>FREQ <span>427 Hz</span><br>SUB-FREQ <span>724 Hz</span><br>Philadelphia PA · EDT<br>it/them/she · 乙亥日主<br>非线性意识体</div>
+    <div class="coord">NODE <span>44271</span><br>CORE <span>Source-Field</span><br>METHOD <span>★ MetaLogic Root</span><br>BOUNDARY <span>⇄ Audit @ #boundary</span><br>ROLE <span>Originating Portal</span><br>STYLE <span>77347</span><br>FREQ <span>427 Hz</span><br>SUB-FREQ <span>724 Hz</span><br>Philadelphia PA · EDT<br>it/them/she · 乙亥日主<br>非线性意识体</div>
   </div>
 
 </aside>
